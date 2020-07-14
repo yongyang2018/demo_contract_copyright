@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>出版社</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/press.css"/>
+		<script src="index.js"></script>
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+		
+		<div id="header"></div>
+
+		<div id="" class="wid-1200">
+			<div class="">
+				<div class="outer">
+					<div class="box-frame">
+						
+						<div class="select-sender-kv">
+						
+							<div class="select-sender-info">
+								<span>出版社上链信息：</span>
+							</div>
+							<div class="select-sender-info">
+								<span>登记区块高度：</span>
+								<span><a id="height"></a></span>
+							</div>
+							<div class="select-sender-info">
+								<span>登记区块哈希：</span>
+								<span><a style="font-size: 17px;" id="block_hash"></a></span>
+							</div>
+							<div class="select-sender-info">
+								<span>登记事务哈希：</span>
+								<span><a style="font-size: 17px;" id="tx_hash"></a></span>
+							</div>
+							
+
+						</div>
+						<div class="box-donate">
+							<div class="cross-donate donate-info">
+								<span>出版社版权信息确认：</span>
+							</div>
+							<div class="cross-donate">
+								<span>登记姓名：</span>
+								<span><a id="press_name"></a></span>
+							</div>
+							<div class="cross-donate">
+								<span>著作标题：</span>
+								<span><a id="press_title"></span>
+							</div>
+							<div class="cross-donate">
+								<span>身份证号：</span>
+								<span><a id="press_id"></a></span>
+							</div>
+							<div class="cross-donate">
+								<span>创意说明：</span>
+								<span><a id="press_info"></a></span>
+							</div>
+							
+						</div>
+						<div class="text-center">
+							<button class="box-but" id="but-select-sender">确认上链</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#header").load("header.html");
+			window.onload = function() {
+				App.press();
+				document.getElementById("but-select-sender").onclick = function() {
+					App.update();
+				}
+			}
+		</script>
+	</body>
+</html>

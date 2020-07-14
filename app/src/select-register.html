@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>查询结果-登记版权</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/header.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/select.css"/>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div id="" class="wid-1200">
+			<div class="">
+				<div class="outer">
+					<div class="box-frame">
+						<div class="select-welfare-title">
+							查询信息
+						</div>
+						<div class="select-welfare-menu">
+							<div class="select-welfare-item mark">1</div>
+							<div class="select-welfare-mid"></div>
+							<div class="select-welfare-item">2</div>
+						</div>
+						<div class="select-welfare-kv">
+							<div class="logistics-item">
+								<span class="font-6">登记版权上链信息：</span>
+							</div>
+							<div class="logistics-item">
+								<span>登记姓名：</span>
+								<span><a id="register_head"></a></span>
+							</div>
+							<div class="select-welfare-info">
+								<span>著作标题：</span>
+								<span><a id="register_title"></a></span>
+							</div>
+							<div class="select-welfare-info">
+								<span>身份证号：</span>
+								<span><a id="register_id"></a></span>
+							</div>
+							<div class="select-welfare-info">
+								<span>创意说明：</span>
+								<span><a id="register_info"></a></span>
+							</div>
+							<div class="select-welfare-block"style="margin-top: 40px;">
+								<span>区块高度：</span>
+								<span><a id="height"></a></span>
+							</div>
+							<div class="select-welfare-block">
+								<span>区块哈希：</span>
+								<span><a id="block_hash"></a></span>
+							</div>
+							<div class="select-welfare-block">
+								<span>事务哈希：</span>
+								<span><a id="tx_hash"></a></span>
+							</div>
+							
+						</div>
+						<div class="text-center">
+							<button class="box-but" id="but-select-welfare">下一页</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#header").load("header.html");
+			window.onload = function() {
+				App.select_register_info();
+				document.getElementById("but-select-welfare").onclick = function() {
+					var url = "select-press.html";
+					window.location.href=url;
+					return true;
+				}
+			}
+		</script>
+	</body>
+</html>

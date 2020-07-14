@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>查证处</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/safe.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/header.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/select.css"/>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="safe-conent">
+			<div class="safe-item">
+				<div class="safe-title">
+					欢迎使用以太坊版权查询网站
+				</div>
+				<div class="safe-slogan">
+					<!-- 宣传标语宣传标语宣传标语宣传标语宣传标语宣传标语宣传标语宣传标语宣传标。 -->
+				</div>
+				<div class="safe-wrap">
+					<input type="text" placeholder="请输入对应的单号" id="single"/>
+					<div class="safe-wrap-img" id="safe-search">
+						<img src="/assets/img/addressee-search.png">
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+
+		<script type="text/javascript">
+			$("#header").load("header.html");
+			window.onload = function() {
+				document.getElementById("safe-search").onclick = function() {
+					confirm();
+				}
+			}
+			function confirm(){
+				
+				var single = document.getElementById("single").value.replace(/(^\s*)|(\s*$)/g, '');//input的id
+				
+				if(single ==""|| single == undefined || single == null){
+					alert("请输入对应的单号")
+					return;	
+				}
+				App.select_register(single);
+				// window.location.href="select-register.html";
+			}
+			
+		</script>
+	</body>
+</html>

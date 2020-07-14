@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登记人</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/header.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/register.css" />
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="wid-1200">
+			<div class="">
+				<div class="outer">
+					<div class="box-frame">
+						<div class="register-title" style="font-weight: 600;">
+							登记人上链信息填写
+						</div>
+						<div class="register-kv">
+							<div class="register-item">
+								<span class="">登记姓名：</span>
+								<input type="text" id="name" required="required" value=""/>
+							</div>
+							<div class="register-item">
+								<span class="">著作标题：</span>
+								<input type="text" id="title" required="required" value=""/>
+							</div>
+							<div class="register-item">
+								<span class="">身份证号：</span>
+								<input type="text" id="num" required="required" value=""/>
+							</div>
+							<div class="register-item">
+								<span class="">创意说明：</span>
+								<input type="donor" id="explan" required="required" value=""/>
+							</div>
+	
+						</div>
+						<div class="text-center">
+							<button class="box-but" onclick="confirm()">存证上链</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#header").load("header.html");
+		
+			function confirm(){
+				var name = document.getElementById("name").value.replace(/(^\s*)|(\s*$)/g, '');//姓名
+				var title = document.getElementById("title").value.replace(/(^\s*)|(\s*$)/g, '');//标题
+				var explan = document.getElementById("explan").value.replace(/(^\s*)|(\s*$)/g, '');//说明
+				var num = document.getElementById("num").value.replace(/(^\s*)|(\s*$)/g, '');//身份证号
+			
+				if(name ==""|| name == undefined || name == null){
+					alert("请输入登记姓名")
+					return;
+				}
+				if (title ==""||title == undefined || title == null) {
+					alert("请输入著作标题")
+					return;
+				}
+				if (num ==""||num == undefined || num == null) {
+					alert("请输入正确身份证号")
+					return;
+				}
+				
+				if (explan ==""||explan == undefined || explan == null) {
+					alert("请输入创意说明")
+					return;
+				}
+				App.save(name,title,explan,num);
+		}
+		</script>
+		
+	</body>
+</html>
