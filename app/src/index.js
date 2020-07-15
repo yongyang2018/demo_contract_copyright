@@ -1,6 +1,5 @@
 import Web3 from "web3";
 import metaCoinArtifact from "../../build/contracts/Copyright.json";
-// import globals from './globals';
 
 
 

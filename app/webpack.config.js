@@ -25,16 +25,16 @@ module.exports = {
         {
           test: /\.(htm|html)$/i,
            use:[ 'html-withimg-loader'] 
-      },
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['env'],
-          plugins: ['transform-react-jsx', 'transform-object-rest-spread', 'transform-runtime']
-        },
       }
+      // ,{
+      //   test: /\.js$/,
+      //   exclude: /(node_modules|bower_components)/,
+      //   loader: 'babel-loader',
+      //   query: {
+      //     presets: ['env'],
+      //     plugins: ['transform-react-jsx', 'transform-object-rest-spread', 'transform-runtime']
+      //   },
+      // }
     ],
 
   },
